@@ -32,5 +32,14 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+            -os ${target.os} -ws ${target.ws} -arch x86_64 -nl ${target.nl} -consoleLog -console -e "10.10.0.200:16196" ^
+            -passticket ^
+            -f "C:\runtime\GitHubAction_workspace\CWKTCOBX\Tests\Scenarios" ^
+            -R -g TTTReport -G -v 6 -l CLI ^
+            -log DEBUG ^
+            -cfgdir "C:\runtime\GitHubAction_workspace\TotalTestConfiguration" ^
+            -ccrepo "pinaka0.totaltst.ccrepo"
+            -ccsystem "Passticket" ^
+            -cctestid "01"
           echo Add other actions to build,
           echo test, and deploy your project.
